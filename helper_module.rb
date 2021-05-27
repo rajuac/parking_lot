@@ -10,7 +10,7 @@ module HelperModule
       print "\nNo parking spots available\n"
     else
       spots.each_with_index do |spot, i|
-        print "\n\n#{i + 1}) #{spot.options[:spot_id]}\n"
+        print "\n\n#{i + 1}) #{spot.options[:spot_id]}-#{spot.options[:type]}\n"
       end
     end
   end
@@ -20,7 +20,7 @@ module HelperModule
     spot_id = gets.chomp
     spot = parking_spot.get_spot(spot_id)
     if spot.nil?
-      puts 'No spot found by this ID'
+      puts "\nNo spot found by this ID\n"
     else
       print "\n Vehicle Number: "
       number = gets.chomp
@@ -34,7 +34,7 @@ module HelperModule
     number = gets.chomp
     record = parking_record.get_parked_record(number)
     if record.nil?
-      puts 'No vehcile found by this number'
+      puts "No vehcile found by this number\n"
     else
       record.unpark({ v_no: number })
       print "\nvehicle  #{number} unparked\n\n"
@@ -46,7 +46,7 @@ module HelperModule
     number = gets.chomp
     record = parking_record.get_parked_record(number)
     if record.nil?
-      puts '\n\nNo vehcile parked by this number'
+      puts "\n\nNo vehcile parked by this number"
     else
       print "\n vehicle  #{number} is  parked on slot #{record.options[:spot_id]}\n\n"
     end
