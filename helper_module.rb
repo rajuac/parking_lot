@@ -9,8 +9,8 @@ module HelperModule
     if spots.empty?
       print "\nNo parking spots available\n"
     else
-      spots.each_with_index do |spot,i|
-        print "\n\n#{i+1}) #{spot.options[:spot_id]}\n"
+      spots.each_with_index do |spot, i|
+        print "\n\n#{i + 1}) #{spot.options[:spot_id]}\n"
       end
     end
   end
@@ -24,7 +24,7 @@ module HelperModule
     else
       print "\n Vehicle Number: "
       number = gets.chomp
-      parking_record.park_vehicle({spot_id: spot_id, v_no: number})
+      parking_record.park_vehicle({ spot_id: spot_id, v_no: number })
       print "\nvehicle  #{number} parked on  #{spot_id}\n\n "
     end
   end
@@ -41,7 +41,7 @@ module HelperModule
     end
   end
 
-  def find_vehicle 
+  def find_vehicle
     print "\n Vehicle Number: "
     number = gets.chomp
     record = parking_record.get_parked_record(number)
@@ -52,11 +52,11 @@ module HelperModule
     end
   end
 
-   def parking_record 
-     ParkingRecord.new
-   end
+  def parking_record
+    ParkingRecord.new
+  end
 
-   def parking_spot 
-     ParkingSpot.new
-   end
+  def parking_spot
+    ParkingSpot.new
+  end
 end

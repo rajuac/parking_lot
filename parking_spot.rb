@@ -16,12 +16,12 @@ class ParkingSpot
   def get_all_spots
     @@parking_spots
   end
-  
+
   def get_available_spots
     @@parking_spots.find_all { |spot| spot.options[:status] == 'Available' }
   end
 
-  def get_spot(spot_id) 
+  def get_spot(spot_id)
     get_all_spots.find { |spot| spot.options[:spot_id] == spot_id }
   end
 end
