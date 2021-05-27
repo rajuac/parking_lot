@@ -23,15 +23,13 @@ module HelperModule
     spot = parking_spot.get_spot(spot_id)
     if spot.nil?
       puts "\nNo spot found by this ID\n"
-    else
-      if spot.options[:type] == type
+    elsif spot.options[:type] == type
       print "\n Vehicle Number: "
       number = gets.chomp
-      parking_record.park_vehicle({ spot_id: spot_id, v_no: number ,type: type })
+      parking_record.park_vehicle({ spot_id: spot_id, v_no: number, type: type })
       print "\nvehicle  #{number} parked on  #{spot_id}\n\n "
-      else
-        print "\n Vehicle type not matching"
-      end
+    else
+      print "\n Vehicle type not matching"
     end
   end
 

@@ -25,11 +25,11 @@ class ParkingSpot
     get_all_spots.find { |spot| spot.options[:spot_id] == spot_id }
   end
 end
-[{ spot_id: '100A', status: 'Available',type: 'car' },
- { spot_id: '101A', status: 'Available',type: 'car' },
- { spot_id: '102A', status: 'Available',type: 'car' },
- { spot_id: '103A', status: 'Available',type: 'bike' },
- { spot_id: '104A', status: 'Available' ,type: 'bike'},
- { spot_id: '105A', status: 'Available' ,type: 'bike'}].each do |a|
+[{ spot_id: '100A', status: 'Available', type: 'car' },
+ { spot_id: '101A', status: 'Available', type: 'car' },
+ { spot_id: '102A', status: 'Available', type: 'car' },
+ { spot_id: '103A', status: 'Available', type: 'bike' },
+ { spot_id: '104A', status: 'Available', type: 'bike' },
+ { spot_id: '105A', status: 'Available', type: 'bike' }].each do |a|
   ParkingSpot.new.add_new_spot(a)
 end
